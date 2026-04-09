@@ -1,10 +1,7 @@
 import React from "react";
 import "./Sidebar.css";
 
-// Adicionamos a prop 'activeItem' para que você possa controlar qual aba está selecionada
-export function Sidebar({ activeItem = "Destinos" }) {
-  
-  // Lista de itens para evitar repetição de código (DRY - Don't Repeat Yourself)
+export function Sidebar({ activeItem, onCategoryChange }) { // Recebe funções via props
   const menuItems = [
     { name: "Destinos", icon: "🏖️" },
     { name: "Restaurantes", icon: "🍴" },
@@ -24,6 +21,8 @@ export function Sidebar({ activeItem = "Destinos" }) {
             <li 
               key={item.name} 
               className={`nav-item ${activeItem === item.name ? "active" : ""}`}
+              onClick={() => onCategoryChange(item.name)} // <--- Dispara a mudança
+              style={{ cursor: 'pointer' }} // Garante que o usuário saiba que é clicável
             >
               <span className="nav-icon">{item.icon}</span>
               <span className="nav-text">{item.name}</span>
