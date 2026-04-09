@@ -6,8 +6,8 @@
 }
 
 body {
-  background-color: #0d1117;
-  color: white;
+  background-color: #1A2A33;
+  color: rgb(235, 248, 50);
 }
 
 .app {
@@ -27,7 +27,7 @@ body {
 
 .section-title {
   margin-bottom: 20px;
-  border-left: 4px solid #7c3aed;
+  border-left: 4px solid #FF7E5F;
   padding-left: 12px;
   font-size: 1.3rem;
 }

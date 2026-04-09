@@ -4,7 +4,8 @@ import "./Card.css";
 // Definindo o componente Card
 export function Card({ title, category, banner }) {
   // Fallbacks: se a imagem não existir, usamos um placeholder
-  const imageSrc = banner || "https://via.placeholder.com/300x180?text=Sem+Imagem";
+  // 
+const imageSrc = banner || "https://via.placeholder.com/300x180?text=Sem+Imagem";
 
   return (
     <article className="card">
