@@ -14,7 +14,6 @@ export function Header({ userName = "Visitante", status = "Online" }) {
         <div className="status-container">
           {/* Uma pequena melhoria visual: um indicador de status */}
           <span className={`status-dot ${status.toLowerCase()}`}></span>
-          <p className="status-text">Status: {status}</p>
         </div>
       </div>
     </header>

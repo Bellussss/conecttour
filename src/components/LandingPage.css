@@ -1,0 +1,123 @@
+.landing-container {
+  height: 100vh;
+  width: 100vw;
+  background-color: #0d1117; /* Fundo escuro igual ao seu print */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Bolhas de brilho ao fundo */
+.blob-orange {
+  position: absolute;
+  top: -100px;
+  right: -100px;
+  width: 400px;
+  height: 400px;
+  background: rgba(255, 126, 95, 0.15);
+  filter: blur(80px);
+  border-radius: 50%;
+}
+
+.blob-blue {
+  position: absolute;
+  bottom: -50px;
+  left: -50px;
+  width: 300px;
+  height: 300px;
+  background: rgba(81, 150, 255, 0.1);
+  filter: blur(80px);
+  border-radius: 50%;
+}
+
+.landing-content {
+  z-index: 10;
+  text-align: center;
+  max-width: 800px;
+  padding: 20px;
+}
+
+.logo-text {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ff7e5f;
+  margin-bottom: 50px;
+  letter-spacing: -1px;
+}
+
+.logo-text span {
+  color: #ffffff;
+}
+
+.hero-title {
+  font-size: 4rem;
+  font-weight: 800;
+  color: white;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+.highlight {
+  color: #ff7e5f; /* Laranja do seu projeto */
+}
+
+.hero-subtitle {
+  color: #8b949e;
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.enter-button {
+  background: #ff7e5f;
+  color: white;
+  border: none;
+  padding: 18px 40px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 20px rgba(255, 126, 95, 0.2);
+}
+
+.enter-button:hover {
+  transform: translateY(-3px);
+  background: #ff6a45;
+  box-shadow: 0 15px 25px rgba(255, 126, 95, 0.4);
+}
+
+.enter-button .arrow {
+  margin-left: 10px;
+  transition: transform 0.3s;
+}
+
+.enter-button:hover .arrow {
+  transform: translateX(5px);
+}
+
+.online-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background: #50fa7b;
+  border-radius: 50%;
+  margin-left: 5px;
+  box-shadow: 0 0 10px #50fa7b;
+}
+
+.landing-footer {
+  position: absolute;
+  bottom: 40px;
+  width: 100%;
+  left: 0;
+  color: #484f58;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}

@@ -3,24 +3,32 @@ import { Sidebar } from "./components/Sidebar";
 import { Header } from "./components/Header";
 import { Card } from "./components/Card";
 import { SearchBar } from "./components/SearchBar";
+import LandingPage from "./components/LandingPage"; // Importando a tela nova
 import { lugaresData } from "./data/Lugares";
 import "./styles/App.css";
 
 function App() {
   const [busca, setBusca] = useState("");
-  const [categoriaAtiva, setCategoriaAtiva] = useState("Destinos"); // Estado inicial
+  const [categoriaAtiva, setCategoriaAtiva] = useState("Destinos");
+  
+  // ESTADO CHAVE: Começa como 'false' para mostrar a Landing Page primeiro
+  const [logado, setLogado] = useState(false);
 
-  // Lógica de Filtro Duplo: Categoria + Busca
+  // Filtra a lista baseada na categoria da sidebar e no que foi digitado na busca
   const lugaresFiltrados = lugaresData.filter((lugar) => {
     const bateBusca = lugar.title.toLowerCase().includes(busca.toLowerCase());
     const bateCategoria = lugar.category === categoriaAtiva;
-    
     return bateBusca && bateCategoria;
   });
 
+  // SE NÃO TIVER LOGADO, retorna apenas a Landing Page
+  if (!logado) {
+    return <LandingPage onEnter={() => setLogado(true)} />;
+  }
+
+  // SE TIVER LOGADO (após clicar no botão), mostra o app real
   return (
     <div className="app">
-      {/* Passamos o estado e a função de atualizar para a Sidebar */}
       <Sidebar 
         activeItem={categoriaAtiva} 
         onCategoryChange={setCategoriaAtiva} 
@@ -46,7 +54,7 @@ function App() {
                 />
               ))
             ) : (
-              <p className="no-results">Nenhum item em "{categoriaAtiva}" corresponde à sua busca.</p>
+              <p className="no-results">Nada encontrado aqui, mestre! 😅</p>
             )}
           </section>
         </div>
