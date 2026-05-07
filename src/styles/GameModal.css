@@ -1,0 +1,151 @@
+/* Fundo embaçado e escuro */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.8); /* Um pouco mais escuro para focar no conteúdo */
+    backdrop-filter: blur(12px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    padding: 20px;
+    animation: fadeIn 0.3s ease forwards;
+}
+
+/* Container do Modal */
+.modal-container {
+    background: #0d0d0f; /* Cor combinando com a sidebar e app */
+    width: 100%;
+    max-width: 440px;
+    border-radius: 28px; /* Bordas um pouco mais arredondadas para parecer premium */
+    overflow: hidden;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8), 
+                0 0 0 1px rgba(255, 255, 255, 0.05); /* Borda interna fina */
+    position: relative;
+    animation: slideUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Header com Imagem */
+.modal-header {
+    position: relative;
+    height: 240px;
+    mask-image: linear-gradient(to bottom, black 80%, transparent 100%); /* Suaviza a transição da imagem para o texto */
+}
+
+.modal-banner {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.close-x {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    z-index: 2;
+}
+
+.close-x:hover { 
+    background: #ff3c3c; 
+    transform: rotate(90deg); /* Efeito divertido ao fechar */
+}
+
+/* Conteúdo */
+.modal-body {
+    padding: 30px;
+    text-align: left; /* Alinhado à esquerda fica mais moderno que centralizado */
+}
+
+.badge-categoria {
+    background: rgba(0, 220, 130, 0.1);
+    color: #00dc82;
+    padding: 6px 14px;
+    border-radius: 100px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    border: 1px solid rgba(0, 220, 130, 0.2);
+}
+
+.modal-titulo {
+    margin: 16px 0 8px;
+    font-size: 28px;
+    color: #ffffff;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+
+.modal-descricao {
+    color: #888;
+    line-height: 1.6;
+    font-size: 15px;
+    margin-bottom: 30px;
+}
+
+/* Botões */
+.modal-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.btn-principal {
+    background: linear-gradient(90deg, #00dc82, #3b82f6); /* Gradiente padrão do app */
+    color: #000;
+    padding: 16px;
+    border: none;
+    border-radius: 16px;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 10px 20px rgba(0, 220, 130, 0.2);
+}
+
+.btn-principal:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(0, 220, 130, 0.4);
+    filter: brightness(1.1);
+}
+
+.btn-secundario {
+    background: rgba(255, 255, 255, 0.03);
+    color: #666;
+    padding: 12px;
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+.btn-secundario:hover { 
+    background: rgba(255, 255, 255, 0.08);
+    color: #fff; 
+}
+
+/* Animações */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { transform: translateY(40px) scale(0.95); opacity: 0; }
+    to { transform: translateY(0) scale(1); opacity: 1; }
+}

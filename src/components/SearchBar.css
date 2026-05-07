@@ -1,6 +1,6 @@
 .search-container {
   width: 100%;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem; /* Aumentado para dar mais respiro ao grid */
   display: flex;
   justify-content: flex-start;
 }
@@ -8,30 +8,51 @@
 .search-box {
   display: flex;
   align-items: center;
-  background-color: #202024;
-  padding: 12px 20px;
-  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.03); /* Fundo sutil */
+  backdrop-filter: blur(10px);
+  padding: 14px 22px;
+  border-radius: 16px; /* Bordas mais arredondadas seguindo os Cards */
   width: 100%;
-  max-width: 400px;
-  border: 2px solid transparent;
-  transition: all 0.2s;
+  max-width: 450px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
+/* Efeito de foco com gradiente na borda */
 .search-box:focus-within {
-  border-color: #FF7E5F;
-  background-color: #121214;
+  background: rgba(255, 255, 255, 0.06);
+  border-color: #00dc82; /* Verde esmeralda */
+  box-shadow: 0 0 20px rgba(0, 220, 130, 0.15);
+  transform: translateY(-2px); /* Leve flutuação ao focar */
 }
 
 .search-icon {
-  margin-right: 12px;
-  font-size: 1.2rem;
+  margin-right: 15px;
+  font-size: 1.1rem;
+  color: #00dc82; /* Ícone agora brilha em verde */
+  filter: drop-shadow(0 0 5px rgba(0, 220, 130, 0.3));
+  opacity: 0.7;
+  transition: 0.3s;
+}
+
+.search-box:focus-within .search-icon {
+  opacity: 1;
+  transform: scale(1.1);
 }
 
 .search-input {
   background: transparent;
   border: none;
-  color: white;
+  color: #ffffff;
   outline: none;
   width: 100%;
   font-size: 1rem;
+  font-weight: 500;
+}
+
+/* Estilização do texto de exemplo (placeholder) */
+.search-input::placeholder {
+  color: #666;
+  font-weight: 400;
 }

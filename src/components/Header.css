@@ -1,21 +1,51 @@
 .header {
-  height: 70px;
-  background-color: #0d1117;
+  height: 80px; /* Um pouco mais alto para respirar melhor */
+  background: rgba(10, 10, 12, 0.8); /* Fundo semi-transparente */
+  backdrop-filter: blur(12px); /* Efeito de vidro (Glassmorphism) */
   display: flex;
   align-items: center;
-  padding: 0 30px;
-  border-bottom: 1px solid #1e293b;
+  justify-content: space-between; /* Garante espaçamento entre as pontas */
+  padding: 0 40px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  position: sticky; /* O header fica fixo no topo ao rolar a página */
+  top: 0;
+  z-index: 1000;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
 }
 
 .user-info h3 {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: -0.5px;
 }
 
 .user-info p {
-  font-size: 0.8rem;
-  color: #94a3b8;
+  font-size: 0.75rem;
+  color: #888888;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Indicador de status (Online) */
+.user-info p::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  background: #00dc82; /* Verde neon */
+  border-radius: 50%;
+  display: inline-block;
+  box-shadow: 0 0 10px rgba(0, 220, 130, 0.5);
 }
 
 .highlight {
-  color: #FF7E5F;
+  color: #00dc82; /* Trocamos o laranja pelo verde esmeralda */
+  font-weight: 700;
+  text-shadow: 0 0 15px rgba(0, 220, 130, 0.2);
 }

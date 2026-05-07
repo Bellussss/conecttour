@@ -3,37 +3,111 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Inter', sans-serif;
+  /* Melhora a renderização das fontes em telas de alta resolução */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
-  background-color: #1A2A33;
-  color: rgb(235, 248, 50);
+  background-color: #050505; /* Preto absoluto para profundidade */
+  color: #ffffff;
+  overflow-x: hidden;
 }
 
 .app {
   display: flex;
   min-height: 100vh;
+  background-color: #050505;
 }
 
 .main-content {
   flex: 1;
   display: flex;
   flex-direction: column;
+  /* Adiciona um sutil degradê de fundo para não ser um preto chapado */
+  background: radial-gradient(circle at top right, rgba(0, 220, 130, 0.03), transparent 40%);
 }
 
 .content {
-  padding: 30px;
+  padding: 40px;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.content-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
 }
 
 .section-title {
-  margin-bottom: 20px;
-  border-left: 4px solid #FF7E5F;
-  padding-left: 12px;
-  font-size: 1.3rem;
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -1px;
+  position: relative;
+  padding-left: 20px;
+}
+
+/* O detalhe da barra lateral do título agora é um gradiente neon */
+.section-title::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 80%;
+  background: linear-gradient(to bottom, #00dc82, #3b82f6);
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 220, 130, 0.3);
 }
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 20px;
+  /* Melhorei o minmax para os cards não ficarem esticados demais em telas grandes */
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 30px;
+  animation: fadeInGrid 0.8s ease-out;
+}
+
+.no-results {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 100px 0;
+  color: #444;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+/* Animação suave para quando os cards carregarem */
+@keyframes fadeInGrid {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Scrollbar Personalizada para combinar com o tema */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #050505;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #222;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00dc82;
 }

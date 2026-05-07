@@ -1,31 +1,72 @@
 .sidebar {
-  width: 220px;
+  width: 250px; /* Um pouco mais larga para as fontes respirarem */
   height: 100vh;
-  background-color: #0d1117;
-  padding: 20px;
-  border-right: 1px solid #1e293b;
+  background-color: #050505; /* Preto profundo para sumir no fundo */
+  padding: 30px 20px;
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
   display: flex;
   flex-direction: column;
+  position: sticky;
+  top: 0;
 }
 
 .logo {
-  color: #FF7E5F;
-  font-size: 1.8rem;
-  font-weight: bold;
-  margin-bottom: 40px;
+  font-size: 1.6rem;
+  font-weight: 800;
+  margin-bottom: 50px;
+  letter-spacing: -1px;
+  background: linear-gradient(90deg, #00dc82, #3b82f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding-left: 10px;
 }
 
 .nav-item {
-  padding: 12px;
-  margin-bottom: 12px;
-  border-radius: 8px;
-  color: #ffffff;
+  padding: 14px 16px;
+  margin-bottom: 8px;
+  border-radius: 12px;
+  color: #666; /* Itens não selecionados ficam mais discretos */
+  font-weight: 500;
   cursor: pointer;
-  transition: 0.3s;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid transparent;
 }
 
-.nav-item.active,
+/* Efeito de Hover */
 .nav-item:hover {
-  background: #1e293b;
+  background: rgba(255, 255, 255, 0.03);
   color: #fff;
+  transform: translateX(5px); /* Pequeno deslize lateral */
+}
+
+/* Item Ativo - O destaque do Connectou */
+.nav-item.active {
+  background: rgba(0, 220, 130, 0.08);
+  color: #00dc82;
+  font-weight: 700;
+  border: 1px solid rgba(0, 220, 130, 0.2);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Pequeno ponto brilhante para o item ativo */
+.nav-item.active::before {
+  content: "";
+  width: 5px;
+  height: 5px;
+  background: #00dc82;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #00dc82;
+}
+
+/* Espaço extra no final para empurrar itens para cima */
+.sidebar-footer {
+  margin-top: auto;
+  padding: 20px 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  color: #333;
+  font-size: 0.7rem;
+  letter-spacing: 1px;
 }

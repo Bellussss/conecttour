@@ -3,30 +3,29 @@ import { Sidebar } from "./components/Sidebar";
 import { Header } from "./components/Header";
 import { Card } from "./components/Card";
 import { SearchBar } from "./components/SearchBar";
-import LandingPage from "./components/LandingPage"; // Importando a tela nova
+import LandingPage from "./components/LandingPage";
+import GameModal from "./components/GameModal"; // Importando o modal que você criou
 import { lugaresData } from "./data/Lugares";
 import "./styles/App.css";
 
 function App() {
   const [busca, setBusca] = useState("");
   const [categoriaAtiva, setCategoriaAtiva] = useState("Destinos");
-  
-  // ESTADO CHAVE: Começa como 'false' para mostrar a Landing Page primeiro
   const [logado, setLogado] = useState(false);
+  
+  // NOVO ESTADO: Armazena o objeto do lugar selecionado para o modal
+  const [modalAberto, setModalAberto] = useState(null);
 
-  // Filtra a lista baseada na categoria da sidebar e no que foi digitado na busca
   const lugaresFiltrados = lugaresData.filter((lugar) => {
     const bateBusca = lugar.title.toLowerCase().includes(busca.toLowerCase());
     const bateCategoria = lugar.category === categoriaAtiva;
     return bateBusca && bateCategoria;
   });
 
-  // SE NÃO TIVER LOGADO, retorna apenas a Landing Page
   if (!logado) {
     return <LandingPage onEnter={() => setLogado(true)} />;
   }
 
-  // SE TIVER LOGADO (após clicar no botão), mostra o app real
   return (
     <div className="app">
       <Sidebar 
@@ -51,6 +50,8 @@ function App() {
                   title={lugar.title}
                   category={lugar.category}
                   banner={lugar.banner}
+                  // PASSO 1: Adicionamos o clique para abrir o modal
+                  onClick={() => setModalAberto(lugar)} 
                 />
               ))
             ) : (
@@ -59,6 +60,14 @@ function App() {
           </section>
         </div>
       </main>
+
+      {/* PASSO 2: Renderização do Modal */}
+      {modalAberto && (
+        <GameModal 
+          jogo={modalAberto} 
+          fechar={() => setModalAberto(null)} 
+        />
+      )}
     </div>
   );
 }
