@@ -1,6 +1,6 @@
 .search-container {
   width: 100%;
-  margin-bottom: 3rem; /* Aumentado para dar mais respiro ao grid */
+  margin-bottom: 3.5rem;
   display: flex;
   justify-content: flex-start;
 }
@@ -8,37 +8,33 @@
 .search-box {
   display: flex;
   align-items: center;
-  background: rgba(255, 255, 255, 0.03); /* Fundo sutil */
-  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
   padding: 14px 22px;
-  border-radius: 16px; /* Bordas mais arredondadas seguindo os Cards */
+  border-radius: 18px; /* Combinando com a suavidade dos Cards */
   width: 100%;
-  max-width: 450px;
+  max-width: 480px;
   border: 1px solid rgba(255, 255, 255, 0.08);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
-/* Efeito de foco com gradiente na borda */
 .search-box:focus-within {
-  background: rgba(255, 255, 255, 0.06);
-  border-color: #00dc82; /* Verde esmeralda */
-  box-shadow: 0 0 20px rgba(0, 220, 130, 0.15);
-  transform: translateY(-2px); /* Leve flutuação ao focar */
+  background: rgba(255, 255, 255, 0.07);
+  border-color: #00dc82;
+  box-shadow: 0 15px 35px rgba(0, 220, 130, 0.15);
+  transform: translateY(-4px) scale(1.01);
 }
 
 .search-icon {
   margin-right: 15px;
-  font-size: 1.1rem;
-  color: #00dc82; /* Ícone agora brilha em verde */
-  filter: drop-shadow(0 0 5px rgba(0, 220, 130, 0.3));
-  opacity: 0.7;
-  transition: 0.3s;
+  color: #00dc82;
+  filter: drop-shadow(0 0 8px rgba(0, 220, 130, 0.4));
+  transition: 0.3s ease;
 }
 
 .search-box:focus-within .search-icon {
-  opacity: 1;
-  transform: scale(1.1);
+  transform: rotate(90deg) scale(1.1);
 }
 
 .search-input {
@@ -47,12 +43,44 @@
   color: #ffffff;
   outline: none;
   width: 100%;
-  font-size: 1rem;
+  font-size: 1.05rem;
   font-weight: 500;
 }
 
-/* Estilização do texto de exemplo (placeholder) */
 .search-input::placeholder {
-  color: #666;
-  font-weight: 400;
+  color: #555;
+  transition: 0.3s;
+}
+
+.search-box:focus-within .search-input::placeholder {
+  opacity: 0.5;
+  padding-left: 5px;
+}
+
+/* Botão de Limpar Busca */
+.clear-search {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: #888;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  transition: 0.2s;
+  margin-left: 10px;
+}
+
+.clear-search:hover {
+  background: #ff4b4b;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .search-box {
+    max-width: 100%;
+  }
 }

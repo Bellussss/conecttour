@@ -1,7 +1,12 @@
 import React from "react";
 import "./Sidebar.css";
 
-export function Sidebar({ activeItem, onCategoryChange }) { // Recebe funções via props
+/**
+ * Sidebar - Navegação Lateral
+ * @param {string} activeItem - Categoria selecionada no momento
+ * @param {function} onCategoryChange - Função que filtra os cards no App.jsx
+ */
+export function Sidebar({ activeItem, onCategoryChange }) {
   const menuItems = [
     { name: "Destinos", icon: "🏖️" },
     { name: "Restaurantes", icon: "🍴" },
@@ -11,18 +16,20 @@ export function Sidebar({ activeItem, onCategoryChange }) { // Recebe funções 
 
   return (
     <aside className="sidebar">
-      <header className="sidebar-header">
-        <h2 className="logo">Conecttour</h2>
-      </header>
+      <div className="sidebar-header">
+        <h2 className="logo">
+          Connec<span>tour</span>
+        </h2>
+      </div>
 
       <nav className="sidebar-nav">
         <ul className="nav-list">
           {menuItems.map((item) => (
             <li 
               key={item.name} 
+              // A classe "active" aplica o brilho verde e a borda que definimos no CSS
               className={`nav-item ${activeItem === item.name ? "active" : ""}`}
-              onClick={() => onCategoryChange(item.name)} // <--- Dispara a mudança
-              style={{ cursor: 'pointer' }} // Garante que o usuário saiba que é clicável
+              onClick={() => onCategoryChange(item.name)}
             >
               <span className="nav-icon">{item.icon}</span>
               <span className="nav-text">{item.name}</span>
@@ -30,6 +37,11 @@ export function Sidebar({ activeItem, onCategoryChange }) { // Recebe funções 
           ))}
         </ul>
       </nav>
+
+      <div className="sidebar-footer">
+        <p>CERQUILHO • SP</p>
+        <p>V. 2.0.4</p>
+      </div>
     </aside>
   );
 }

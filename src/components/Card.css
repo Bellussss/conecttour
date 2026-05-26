@@ -1,90 +1,79 @@
 .card-container {
-  background: #161618;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 20px;
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  cursor: pointer;
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  position: relative;
   display: flex;
   flex-direction: column;
+  height: 100%; /* Importante para o Grid alinhar todos iguais */
 }
 
 .card-container:hover {
-  transform: translateY(-10px);
-  border-color: rgba(0, 220, 130, 0.3); /* Brilho sutil na borda ao focar */
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  transform: translateY(-8px);
+  border-color: #00dc82;
+  background: rgba(255, 255, 255, 0.06);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
 }
 
 .card-image-wrapper {
   position: relative;
-  height: 190px;
+  width: 100%;
+  height: 180px; /* Altura fixa para não distorcer o grid */
   overflow: hidden;
 }
 
 .card-img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s ease;
+  object-fit: cover; /* Faz a imagem preencher o espaço sem esticar */
+  transition: transform 0.6s ease;
 }
 
 .card-container:hover .card-img {
-  transform: scale(1.1); /* Zoom suave na imagem ao dar hover */
+  transform: scale(1.1);
 }
 
 .card-tag {
   position: absolute;
   top: 12px;
-  left: 12px;
-  background: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(8px); /* Efeito de vidro na tag */
+  right: 12px;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(4px);
   color: #00dc82;
-  padding: 5px 12px;
-  border-radius: 8px;
-  font-size: 11px;
+  padding: 4px 12px;
+  border-radius: 100px;
+  font-size: 0.7rem;
   font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  border: 1px solid rgba(0, 220, 130, 0.2);
+  border: 1px solid rgba(0, 220, 130, 0.3);
 }
 
 .card-body {
   padding: 20px;
   display: flex;
   flex-direction: column;
-  flex-grow: 1;
+  gap: 15px;
+  flex-grow: 1; /* Empurra o conteúdo para preencher o card */
 }
 
 .card-name {
-  color: #efefef;
+  color: #fff;
   font-size: 1.1rem;
-  font-weight: 600;
-  margin-bottom: 15px;
-  letter-spacing: -0.3px;
+  font-weight: 700;
+  margin: 0;
 }
 
 .btn-visitar {
-  width: 100%;
-  background: #1e1e20; /* Fundo escuro pro botão */
+  background: transparent;
+  border: none;
   color: #00dc82;
-  border: 1px solid rgba(0, 220, 130, 0.3);
-  padding: 12px;
-  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
   font-weight: 600;
+  font-size: 0.85rem;
+  padding: 0;
   cursor: pointer;
-  transition: all 0.3s ease;
-  margin-top: auto; /* Empurra o botão sempre pro final */
-}
-
-.card-container:hover .btn-visitar {
-  background: #00dc82;
-  color: #000;
-}
-
-/* Quando clicado ou ativo */
-.btn-active {
-  background: #ffffff !important;
-  color: #000 !important;
-  transform: scale(0.95);
-  border-color: #fff;
+  margin-top: auto; /* Alinha o botão sempre no fundo do card */
 }

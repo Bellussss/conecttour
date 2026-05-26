@@ -5,7 +5,7 @@ import parque from "../assets/parque.jpg";
 import jmburguer from "../assets/jmburguer.jpg";
 import parquedoslagos from "../assets/parquedoslagos.jpg";
 import centro_olimpico from "../assets/centro_olimpico.jpg"
-import hotel_zanata from "../assets/hotal_zanata.jpeg";
+import hotel_zanata from "../assets/hotel_zanata.jpeg";
 import don_enrico from "../assets/don_enrico.png"
 import primos_gordinhos from "../assets/primos_gordinhos.jpg"
 import saborosa from "../assets/saborosa.jpg";
@@ -15,93 +15,93 @@ import galo from "../assets/galo.jpg"
 export const lugaresData = [
   { 
     id: 1, 
-    title: "Cerquilho", 
-    category: "Destinos", // Antes era 'Natureza'
+    title: "Cidade das Rosas", 
+    category: "Destinos", 
     banner: cerquilho,
-    description: "Cidade de Cerquilho" 
+    description: "Explore o coração de Cerquilho, conhecida pela sua hospitalidade e belas paisagens urbanas." 
   },
   { 
     id: 2, 
     title: "Restaurante Sabor", 
-    category: "Restaurantes", // Antes era 'Gastronomia'
+    category: "Restaurantes", 
     banner: restaurante,
-    description: "O melhor da culinária local com ingredientes frescos."
+    description: "O melhor da culinária local com ingredientes frescos e um ambiente acolhedor."
   },
   { 
     id: 3, 
     title: "Hotel Lux", 
-    category: "Hotéis", // Antes era 'Hospedagem' (com acento igual à Sidebar)
+    category: "Hotéis", 
     banner: hotel,
-    description: "Conforto e elegância para sua estadia."
+    description: "Conforto e elegância de alto padrão para sua estadia inesquecível."
   },
   { 
     id: 4, 
     title: "Parque Verde", 
     category: "Lazer", 
     banner: parque,
-    description: "Área de lazer completa para toda a família."
+    description: "Área de lazer completa com trilhas e contato direto com a natureza."
   },
   {
     id: 5,
-    title: "jmburguer",
+    title: "JM Burguer",
     category: "Restaurantes",
     banner: jmburguer,
-    description: "Hamburguer de qualidade com um bom custo-benefício."
+    description: "Hambúrgueres artesanais grelhados no fogo com o melhor custo-benefício da região."
   },
   {
-  id: 6,
-  title: "Parque dos Lagos",
-  category: "Lazer",
-  banner: parquedoslagos,
-  description:  "De um passeio em um parque bem cuidado"
+    id: 6,
+    title: "Parque dos Lagos",
+    category: "Lazer",
+    banner: parquedoslagos,
+    description: "Perfeito para um passeio ao entardecer ou um piquenique em família à beira dos lagos."
   },
   {
     id: 7,
     title: "Centro Olímpico",
     category: "Lazer",
     banner: centro_olimpico,
-    description: "Um bom destino para um fim de semana quente"
+    description: "Piscinas e infraestrutura esportiva completa para os dias mais quentes do ano."
   },
   {
     id: 8,
     title: "Hotel Zanata",
     category: "Hotéis",
     banner: hotel_zanata,
-    description: "Destinos para dormir na cidade"
+    description: "Tradição e conforto no centro da cidade, ideal para viajantes a negócios ou lazer."
   },
   {
     id: 9,
-    title: "Don Enrico",
+    title: "Don Enrico Pizza",
     category: "Restaurantes",
     banner: don_enrico,
-    description: "Pra quem gosta de pizza"
+    description: "Pizzas artesanais com massa fininha e ingredientes premium selecionados."
   },
   {
     id: 10,
     title: "Primo Gordinho",
     category: "Restaurantes",
     banner: primos_gordinhos,
-    description: "Pastel de feira para levar a família!" 
+    description: "O tradicional pastel de feira com recheio generoso para reunir toda a família." 
   },
   {
     id: 11,
-    title: "Saborosa",
+    title: "Pizzaria Saborosa",
     category: "Restaurantes",
     banner: saborosa,
-    description: "Pizzaria antiga e de qualidade"
+    description: "Uma das pizzarias mais tradicionais da cidade, mantendo a qualidade há décadas."
   },
   {
     id: 12,
-    title: "Lindsey",
+    title: "Hotel Lindsey",
     category: "Hotéis",
     banner: lindsey,
-    description: "Hotel na estrada"
+    description: "Localização estratégica na estrada, oferecendo praticidade e descanso para sua viagem."
   },
   {
-     id: 13,
+    id: 13,
     title: "Galo Salgaderia",
     category: "Restaurantes",
     banner: galo,
-    description: "Uma das mais antigas salgaderias da cidade"
+    description: "Referência em salgados fritos e assados, um clássico ponto de encontro em Cerquilho."
   }
-  ];
+];

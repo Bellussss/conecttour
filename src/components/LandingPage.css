@@ -1,43 +1,48 @@
+/* Garante que o container ocupe a tela toda e centralize tudo */
 .landing-container {
   height: 100vh;
   width: 100vw;
-  background-color: #050505; /* Preto mais profundo para dar contraste */
+  background-color: #050505;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
   position: relative;
+  overflow: hidden;
   font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
-/* Bolhas de brilho dinâmicas */
+/* Bolhas de brilho (Os Blobs) */
 .blob-orange {
   position: absolute;
-  top: -5%;
+  top: -10%;
   right: -5%;
-  width: 500px;
-  height: 500px;
+  width: 600px;
+  height: 600px;
   background: radial-gradient(circle, rgba(0, 220, 130, 0.15) 0%, transparent 70%);
-  filter: blur(60px);
-  animation: pulse 8s infinite alternate;
+  filter: blur(80px);
+  z-index: 1;
 }
 
 .blob-blue {
   position: absolute;
   bottom: -10%;
   left: -5%;
-  width: 450px;
-  height: 450px;
+  width: 500px;
+  height: 500px;
   background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
-  filter: blur(60px);
-  animation: pulse 10s infinite alternate-reverse;
+  filter: blur(80px);
+  z-index: 1;
 }
 
 .landing-content {
+  position: relative;
   z-index: 10;
   text-align: center;
-  max-width: 900px;
-  padding: 40px;
+  max-width: 800px;
+  padding: 20px;
 }
 
 .logo-text {
@@ -45,8 +50,8 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 4px;
-  color: #00dc82; /* Verde esmeralda */
-  margin-bottom: 60px;
+  color: #00dc82;
+  margin-bottom: 40px;
 }
 
 .logo-text span {
@@ -55,78 +60,48 @@
 }
 
 .hero-title {
-  font-size: 5rem; /* Aumentado para impacto */
+  font-size: 4rem;
   font-weight: 800;
   color: white;
-  line-height: 0.95;
-  margin-bottom: 25px;
-  letter-spacing: -2px;
+  line-height: 1.1;
+  margin-bottom: 20px;
 }
 
-/* Gradiente no texto em vez de cor sólida */
 .highlight {
   background: linear-gradient(90deg, #00dc82, #3b82f6);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  display: inline-block;
 }
 
 .hero-subtitle {
   color: #888;
-  font-size: 1.25rem;
-  margin-bottom: 50px;
-  max-width: 540px;
-  margin-left: auto;
-  margin-right: auto;
+  font-size: 1.2rem;
+  margin-bottom: 40px;
   line-height: 1.6;
 }
 
-/* Botão Estilo Apple/Linear */
 .enter-button {
   background: #ffffff;
-  color: #000000;
+  color: #000;
   border: none;
-  padding: 20px 45px;
-  font-size: 1.1rem;
+  padding: 18px 40px;
+  font-size: 1rem;
   font-weight: 700;
-  border-radius: 100px; /* Botão pilula é mais moderno */
+  border-radius: 100px;
   cursor: pointer;
-  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
-  display: inline-flex;
-  align-items: center;
-  box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+  transition: 0.3s;
 }
 
 .enter-button:hover {
   transform: scale(1.05);
   background: #00dc82;
-  box-shadow: 0 0 30px rgba(0, 220, 130, 0.4);
-}
-
-.enter-button .arrow {
-  margin-left: 12px;
-  font-size: 1.4rem;
-  transition: transform 0.3s;
-}
-
-.enter-button:hover .arrow {
-  transform: translateX(8px);
 }
 
 .landing-footer {
   position: absolute;
-  bottom: 40px;
-  width: 100%;
-  left: 0;
-  color: #333;
+  bottom: 30px;
+  color: #444;
   font-size: 0.7rem;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  font-weight: 600;
-}
-
-/* Animação suave de pulsação para o fundo */
-@keyframes pulse {
-  from { transform: scale(1); opacity: 0.5; }
-  to { transform: scale(1.2); opacity: 0.8; }
+  letter-spacing: 1px;
+  z-index: 10;
 }

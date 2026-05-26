@@ -1,51 +1,114 @@
 .header {
-  height: 80px; /* Um pouco mais alto para respirar melhor */
-  background: rgba(10, 10, 12, 0.8); /* Fundo semi-transparente */
-  backdrop-filter: blur(12px); /* Efeito de vidro (Glassmorphism) */
+  height: 80px;
+  background: rgba(10, 10, 12, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   display: flex;
   align-items: center;
-  justify-content: space-between; /* Garante espaçamento entre as pontas */
+  justify-content: space-between;
   padding: 0 40px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-  position: sticky; /* O header fica fixo no topo ao rolar a página */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  position: sticky;
   top: 0;
   z-index: 1000;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.user-avatar {
+  width: 44px;
+  height: 44px;
+  background: linear-gradient(135deg, #00dc82, #009d5d);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+  font-weight: 800;
+  font-size: 1.2rem;
+  box-shadow: 0 4px 15px rgba(0, 220, 130, 0.2);
 }
 
 .user-info {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 4px;
 }
 
-.user-info h3 {
-  font-size: 1.1rem;
+.header-greeting {
+  font-size: 1rem;
   font-weight: 600;
   color: #ffffff;
-  letter-spacing: -0.5px;
-}
-
-.user-info p {
-  font-size: 0.75rem;
-  color: #888888;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-/* Indicador de status (Online) */
-.user-info p::before {
-  content: "";
-  width: 8px;
-  height: 8px;
-  background: #00dc82; /* Verde neon */
-  border-radius: 50%;
-  display: inline-block;
-  box-shadow: 0 0 10px rgba(0, 220, 130, 0.5);
+  margin: 0;
+  letter-spacing: -0.3px;
 }
 
 .highlight {
-  color: #00dc82; /* Trocamos o laranja pelo verde esmeralda */
+  color: #00dc82;
   font-weight: 700;
-  text-shadow: 0 0 15px rgba(0, 220, 130, 0.2);
+}
+
+.status-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  position: relative;
+}
+
+/* Status Online com animação de pulso */
+.status-dot.online {
+  background: #00dc82;
+  box-shadow: 0 0 10px #00dc82;
+}
+
+.status-dot.online::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: #00dc82;
+  animation: pulse-dot 2s infinite;
+}
+
+@keyframes pulse-dot {
+  0% { transform: scale(1); opacity: 0.8; }
+  100% { transform: scale(2.5); opacity: 0; }
+}
+
+.status-text {
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.location-tag {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 8px 16px;
+  border-radius: 100px;
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: 0.3s;
+}
+
+.location-tag:hover {
+  background: rgba(0, 220, 130, 0.1);
+  border-color: #00dc82;
+  color: #00dc82;
 }
