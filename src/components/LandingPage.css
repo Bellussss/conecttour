@@ -15,7 +15,7 @@
 }
 
 /* Bolhas de brilho (Os Blobs) */
-.blob-orange {
+.blob-orange { /* Mantido o nome do seu HTML, mas com o tom verde/esmeralda original */
   position: absolute;
   top: -10%;
   right: -5%;
@@ -80,23 +80,77 @@
   line-height: 1.6;
 }
 
+/* ==========================================
+   NOVO BOTÃO PROFISSIONAL E FLUIDO
+   ========================================== */
 .enter-button {
-  background: #ffffff;
-  color: #000;
-  border: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
   padding: 18px 40px;
   font-size: 1rem;
   font-weight: 700;
-  border-radius: 100px;
+  color: #ffffff;
   cursor: pointer;
-  transition: 0.3s;
+  border: none;
+  border-radius: 100px; /* Mantido o estilo arredondado original */
+  
+  /* Gradiente moderno que combina com a identidade verde/azul do projeto */
+  background: linear-gradient(135deg, #00dc82 0%, #10b981 50%, #3b82f6 100%);
+  background-size: 200% auto;
+  
+  /* Sombra elegante e sutil translúcida */
+  box-shadow: 0 4px 20px rgba(0, 220, 130, 0.25);
+  
+  /* Transição ultra suave */
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
+/* Efeito ao passar o mouse */
 .enter-button:hover {
-  transform: scale(1.05);
-  background: #00dc82;
+  /* Desloca o gradiente para dar efeito de brilho em movimento */
+  background-position: right center;
+  
+  /* Botão sobe um pouquinho e a sombra expande */
+  box-shadow: 0 8px 28px rgba(0, 220, 130, 0.45);
+  transform: translateY(-2px) scale(1.02);
 }
 
+/* Efeito ao clicar */
+.enter-button:active {
+  transform: translateY(1px) scale(0.98);
+  box-shadow: 0 2px 10px rgba(0, 220, 130, 0.3);
+}
+
+/* Seta interna do botão */
+.enter-button .arrow {
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+/* Faz a seta deslizar para o lado no hover */
+.enter-button:hover .arrow {
+  transform: translateX(5px);
+}
+
+/* ==========================================
+   ESTILOS DO CURSOR DO EFEITO DE DIGITAR
+   ========================================== */
+.cursor-green {
+  color: #00dc82; /* Usando o mesmo verde brilhante da sua marca */
+  margin-left: 6px;
+  font-weight: 500;
+  animation: piscar 1s infinite;
+}
+
+@keyframes piscar {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* ==========================================
+   RODAPÉ
+   ========================================== */
 .landing-footer {
   position: absolute;
   bottom: 30px;

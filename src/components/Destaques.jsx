@@ -1,6 +1,6 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Autoplay, EffectFade } from "swiper/modules";
+import { Navigation, Pagination, Autoplay, EffectFade } from 'swiper/modules';
 
 // Imports obrigatórios
 import "swiper/css";
@@ -10,7 +10,7 @@ import "swiper/css/effect-fade";
 import "./Destaques.css";
 
 export function Destaques({ lugares, onSelect }) {
-  const destaques = lugares?.slice(0, 4) || [];
+  const destaques = lugares?.slice(4, 10) || [];
 
   return (
     <section className="destaques-container">
@@ -21,7 +21,7 @@ export function Destaques({ lugares, onSelect }) {
         loop={true}
         speed={1000}
         autoplay={{
-          delay: 4000,
+          delay: 3000,
           disableOnInteraction: false,
           pauseOnMouseEnter: true,
         }}

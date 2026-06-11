@@ -10,28 +10,69 @@
   position: sticky;
   top: 0;
   z-index: 100;
+  font-family: 'Inter', sans-serif;
 }
 
-.logo {
+/* ==========================================
+   LOGO COM EFEITO PREMIUM DE ESPALHAR (CORRIGIDO)
+   ========================================== */
+.logo.premium-hover {
+  display: flex;
   font-size: 1.8rem;
   font-weight: 900;
   margin-bottom: 60px;
-  letter-spacing: -1.5px;
-  background: linear-gradient(90deg, #00dc82, #3b82f6);
+  padding-left: 8px;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Configura cada letra individual para a transição fluida */
+.logo.premium-hover span {
+  display: inline-block;
+  transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), 
+              color 0.4s ease,
+              filter 0.4s ease;
+}
+
+/* Letras de 1 a 6 (Connec) - Mantém o gradiente original da sua marca */
+.logo.premium-hover span:nth-child(-n+6) {
+  background: linear-gradient(90deg, #00dc82, #10b981);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  padding-left: 8px;
 }
 
-.logo span {
-  -webkit-text-fill-color: #ffffff; /* Faz o "tour" ser branco */
-  opacity: 0.9;
+/* Letras de 7 a 10 (tour) - Fica no branco limpo e fosco original */
+.logo.premium-hover span:nth-child(n+7) {
+  color: #ffffff;
+  -webkit-text-fill-color: initial; /* Reseta o efeito transparente para não sumir */
+  opacity: 0.7;
 }
 
+/* --- EFEITO HOVER (PASSAR O MOUSE) --- */
+
+/* Empurra o bloco "Connec" 4px para a esquerda */
+.logo.premium-hover:hover span:nth-child(-n+6) {
+  transform: translateX(-4px);
+  filter: drop-shadow(0 0 8px rgba(0, 220, 130, 0.4));
+}
+
+/* Empurra o bloco "tour" 6px para a direita e acende o brilho */
+.logo.premium-hover:hover span:nth-child(n+7) {
+  transform: translateX(6px);
+  opacity: 1;
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.3));
+}
+
+/* ==========================================
+   NAVEGAÇÃO LATERAL
+   ========================================== */
 .nav-list {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .nav-item {
@@ -47,7 +88,9 @@
   border: 1px solid transparent;
 }
 
-.nav-item svg {
+/* Suporte para os emojis que você está usando como ícone no JSX */
+.nav-icon {
+  font-size: 1.2rem;
   transition: transform 0.3s ease;
   opacity: 0.6;
 }
@@ -58,9 +101,9 @@
   transform: translateX(8px);
 }
 
-.nav-item:hover svg {
+.nav-item:hover .nav-icon {
   opacity: 1;
-  color: #00dc82;
+  transform: scale(1.1);
 }
 
 .nav-item.active {
@@ -69,11 +112,14 @@
   border: 1px solid rgba(0, 220, 130, 0.15);
 }
 
-.nav-item.active svg {
+.nav-item.active .nav-icon {
   opacity: 1;
   transform: scale(1.1);
 }
 
+/* ==========================================
+   RODAPÉ DA SIDEBAR
+   ========================================== */
 .sidebar-footer {
   margin-top: auto;
   padding: 24px 8px 0;
