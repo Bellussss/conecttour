@@ -1,9 +1,25 @@
 import React from "react";
+import { toast } from "react-toastify";
 import "./Footer.css";
-// Se estiver usando react-icons, pode importar ícones aqui
-// import { FaInstagram, FaFacebook, FaYoutube } from "react-icons/fa";
 
 export function Footer() {
+  const scrollToTop = (e) => {
+    e.preventDefault();
+    const mainContent = document.querySelector('.main-content');
+    if (mainContent) {
+      mainContent.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+
+  const handleContato = (e) => {
+    e.preventDefault();
+    toast.info("📱 Redirecionando para o WhatsApp do Connectour...");
+  };
+
+  const handleSocial = (network) => {
+    toast.success(`Abrindo ${network}...`);
+  };
+
   return (
     <footer className="footer">
       <div className="footer-content">
@@ -11,18 +27,17 @@ export function Footer() {
           <h2 className="footer-logo">Connec<span>tour</span></h2>
           <p>Explorando o melhor de Cerquilho, SP.</p>
           <div className="social-links">
-            {/* Espaço para ícones sociais futuramente */}
-            <span className="social-icon">IG</span>
-            <span className="social-icon">FB</span>
-            <span className="social-icon">YT</span>
+            <span className="social-icon" onClick={() => handleSocial('Instagram')}>IG</span>
+            <span className="social-icon" onClick={() => handleSocial('Facebook')}>FB</span>
+            <span className="social-icon" onClick={() => handleSocial('YouTube')}>YT</span>
           </div>
         </div>
 
         <div className="footer-section">
           <h3>Explorar</h3>
           <ul>
-            <li><a href="#inicio">Início</a></li>
-            <li><a href="#contato">Contato</a></li>
+            <li><a href="#inicio" onClick={scrollToTop}>Início</a></li>
+            <li><a href="#contato" onClick={handleContato}>Contato</a></li>
           </ul>
         </div>
 

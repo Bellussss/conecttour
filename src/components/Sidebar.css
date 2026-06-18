@@ -2,7 +2,7 @@
 .sidebar {
   width: 260px;
   height: 100vh;
-  background-color: #050505;
+  background-color: var(--bg-base);
   padding: 40px 24px;
   border-right: 1px solid rgba(255, 255, 255, 0.05);
   display: flex;
@@ -36,7 +36,7 @@
 
 /* Letras de 1 a 6 (Connec) - Mantém o gradiente original da sua marca */
 .logo.premium-hover span:nth-child(-n+6) {
-  background: linear-gradient(90deg, #00dc82, #10b981);
+  background: linear-gradient(90deg, var(--primary), #10b981);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -108,7 +108,7 @@
 
 .nav-item.active {
   background: rgba(0, 220, 130, 0.08);
-  color: #00dc82;
+  color: var(--primary);
   border: 1px solid rgba(0, 220, 130, 0.15);
 }
 

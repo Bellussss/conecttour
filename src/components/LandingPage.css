@@ -2,7 +2,7 @@
 .landing-container {
   height: 100vh;
   width: 100vw;
-  background-color: #050505;
+  background-color: var(--bg-base);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -50,7 +50,7 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 4px;
-  color: #00dc82;
+  color: var(--primary);
   margin-bottom: 40px;
 }
 
@@ -68,7 +68,7 @@
 }
 
 .highlight {
-  background: linear-gradient(90deg, #00dc82, #3b82f6);
+  background: linear-gradient(90deg, var(--primary), #3b82f6);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -96,7 +96,7 @@
   border-radius: 100px; /* Mantido o estilo arredondado original */
   
   /* Gradiente moderno que combina com a identidade verde/azul do projeto */
-  background: linear-gradient(135deg, #00dc82 0%, #10b981 50%, #3b82f6 100%);
+  background: linear-gradient(135deg, var(--primary) 0%, #10b981 50%, #3b82f6 100%);
   background-size: 200% auto;
   
   /* Sombra elegante e sutil translúcida */
@@ -137,7 +137,7 @@
    ESTILOS DO CURSOR DO EFEITO DE DIGITAR
    ========================================== */
 .cursor-green {
-  color: #00dc82; /* Usando o mesmo verde brilhante da sua marca */
+  color: var(--primary); /* Usando o mesmo verde brilhante da sua marca */
   margin-left: 6px;
   font-weight: 500;
   animation: piscar 1s infinite;

@@ -52,7 +52,7 @@
 }
 
 .slide-badge {
-  background: #00dc82;
+  background: var(--primary);
   color: #000;
   padding: 6px 16px;
   border-radius: 100px;
@@ -84,7 +84,7 @@
 }
 
 .btn-conhecer {
-  background: #00dc82;
+  background: var(--primary);
   color: #000;
   border: none;
   padding: 16px 35px;
@@ -118,7 +118,7 @@
 }
 
 .swiper-pagination-bullet-active {
-  background: #00dc82 !important;
+  background: var(--primary) !important;
   opacity: 1;
   width: 30px;
 }

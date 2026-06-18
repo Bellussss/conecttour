@@ -1,8 +1,9 @@
 .footer {
-  background-color: #050505; /* Fundo escuro para manter o padrão */
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  background-color: var(--bg-surface);
+  border-top: 1px solid var(--border-color);
   padding: 60px 40px 20px;
   margin-top: 50px;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
 }
 
 .footer-content {
@@ -16,7 +17,7 @@
 }
 
 .footer-section h3 {
-  color: #fff;
+  color: var(--text-main);
   font-size: 1.1rem;
   margin-bottom: 20px;
   font-weight: 700;
@@ -29,38 +30,36 @@
 }
 
 .footer-section ul li {
-  color: #888;
   margin-bottom: 12px;
-  font-size: 0.9rem;
-  transition: 0.3s;
 }
 
 .footer-section a {
-  color: #888;
+  color: var(--text-muted);
   text-decoration: none;
-  transition: 0.3s;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
 }
 
 .footer-section a:hover {
-  color: #00dc82; /* Verde neon ao passar o mouse */
+  color: var(--primary); 
 }
 
 /* Estilo da Logo no Footer */
 .footer-logo {
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   font-weight: 800;
-  color: #00dc82;
+  color: var(--primary);
   margin-bottom: 15px;
   letter-spacing: -1px;
 }
 
 .footer-logo span {
-  color: #fff;
+  color: var(--text-main);
 }
 
 .brand p {
-  color: #666;
-  font-size: 0.9rem;
+  color: var(--text-muted);
+  font-size: 0.95rem;
   line-height: 1.6;
 }
 
@@ -72,38 +71,40 @@
 }
 
 .social-icon {
-  width: 35px;
-  height: 35px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 8px;
+  width: 40px;
+  height: 40px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.7rem;
-  font-weight: bold;
-  color: #888;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-muted);
   cursor: pointer;
-  transition: 0.3s;
+  transition: all 0.3s ease;
 }
 
 .social-icon:hover {
-  background: #00dc82;
-  color: #000;
+  background: var(--primary);
+  color: #fff;
+  border-color: var(--primary);
   transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(255, 126, 95, 0.3);
 }
 
 /* Barra Final */
 .footer-bottom {
   max-width: 1200px;
   margin: 0 auto;
-  padding-top: 20px;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding-top: 25px;
+  border-top: 1px solid var(--border-color);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: #444;
-  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-size: 0.85rem;
 }
 
 .made-by {
@@ -122,7 +123,7 @@
   
   .footer-bottom {
     flex-direction: column;
-    gap: 10px;
+    gap: 15px;
     text-align: center;
   }
 }

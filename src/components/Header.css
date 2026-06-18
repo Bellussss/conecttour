@@ -22,7 +22,7 @@
 .user-avatar {
   width: 44px;
   height: 44px;
-  background: linear-gradient(135deg, #00dc82, #009d5d);
+  background: linear-gradient(135deg, var(--primary), var(--primary-hover));
   border-radius: 12px;
   display: flex;
   align-items: center;
@@ -48,7 +48,7 @@
 }
 
 .highlight {
-  color: #00dc82;
+  color: var(--primary);
   font-weight: 700;
 }
 
@@ -67,8 +67,8 @@
 
 /* Status Online com animação de pulso */
 .status-dot.online {
-  background: #00dc82;
-  box-shadow: 0 0 10px #00dc82;
+  background: var(--primary);
+  box-shadow: 0 0 10px var(--primary);
 }
 
 .status-dot.online::after {
@@ -76,7 +76,7 @@
   position: absolute;
   inset: 0;
   border-radius: 50%;
-  background: #00dc82;
+  background: var(--primary);
   animation: pulse-dot 2s infinite;
 }
 
@@ -109,6 +109,6 @@
 
 .location-tag:hover {
   background: rgba(0, 220, 130, 0.1);
-  border-color: #00dc82;
-  color: #00dc82;
+  border-color: var(--primary);
+  color: var(--primary);
 }

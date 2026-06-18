@@ -1,38 +1,39 @@
 .card-container {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 20px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
   overflow: hidden;
   cursor: pointer;
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   display: flex;
   flex-direction: column;
-  height: 100%; /* Importante para o Grid alinhar todos iguais */
+  height: 100%;
+  box-shadow: var(--shadow-sm);
 }
 
 .card-container:hover {
   transform: translateY(-8px);
-  border-color: #00dc82;
-  background: rgba(255, 255, 255, 0.06);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+  border-color: var(--primary);
+  box-shadow: var(--shadow-lg);
+  background: var(--bg-elevated); /* Traz de volta o brilho no hover */
 }
 
 .card-image-wrapper {
   position: relative;
   width: 100%;
-  height: 180px; /* Altura fixa para não distorcer o grid */
+  height: 180px;
   overflow: hidden;
 }
 
 .card-img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Faz a imagem preencher o espaço sem esticar */
+  object-fit: cover;
   transition: transform 0.6s ease;
 }
 
 .card-container:hover .card-img {
-  transform: scale(1.1);
+  transform: scale(1.08);
 }
 
 .card-tag {
@@ -40,40 +41,76 @@
   top: 12px;
   right: 12px;
   background: rgba(0, 0, 0, 0.7);
-  backdrop-filter: blur(4px);
-  color: #00dc82;
-  padding: 4px 12px;
+  backdrop-filter: blur(8px);
+  color: var(--primary);
+  padding: 6px 14px;
   border-radius: 100px;
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   font-weight: 700;
   border: 1px solid rgba(0, 220, 130, 0.3);
+  z-index: 5;
 }
 
 .card-body {
-  padding: 20px;
+  padding: 24px;
   display: flex;
   flex-direction: column;
   gap: 15px;
-  flex-grow: 1; /* Empurra o conteúdo para preencher o card */
+  flex-grow: 1;
 }
 
 .card-name {
-  color: #fff;
-  font-size: 1.1rem;
+  color: var(--text-main);
+  font-size: 1.2rem;
   font-weight: 700;
   margin: 0;
+  letter-spacing: -0.3px;
 }
 
 .btn-visitar {
   background: transparent;
   border: none;
-  color: #00dc82;
+  color: var(--primary);
   display: flex;
   align-items: center;
   gap: 8px;
   font-weight: 600;
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   padding: 0;
   cursor: pointer;
-  margin-top: auto; /* Alinha o botão sempre no fundo do card */
+  margin-top: auto;
+  transition: color 0.3s ease;
+}
+
+.btn-visitar:hover {
+  color: var(--primary-hover);
+}
+
+/* Botão de Favoritar */
+.btn-favorite {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  z-index: 10;
+  padding: 0;
+  color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.btn-favorite:hover {
+  transform: scale(1.15);
+  background: rgba(0, 0, 0, 0.8);
+  border-color: var(--primary);
 }
